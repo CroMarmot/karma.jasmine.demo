@@ -36,6 +36,7 @@ module.exports = function(config) {
       './src/**/*.js':['webpack'],
     },
     webpack:{
+      mode: 'production',
       module: {
         rules: [{
           test: /\.js$/,
@@ -51,7 +52,7 @@ module.exports = function(config) {
           use: {
               loader: 'babel-loader',
               options: {
-                  presets: ['env'],
+                  presets: ['@babel/preset-env'],
                   plugins: ['istanbul']
               }
             },
